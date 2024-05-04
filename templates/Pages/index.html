@@ -1,0 +1,32 @@
+{% extends 'Boiler/Base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container mt-5">
+    <h2 class="text-center">
+        Results
+    </h2>
+
+    <div class="results mt-5">
+        <a href="{% url 'process-img' %}" class="float-end btn btn-sm btn-dark mb-3">Create new</a>
+        <table class="table">
+            <thead>
+                <th>#</th>
+                <th>Name</th>
+                <th>Date Created</th>
+                <th>Action</th>
+            </thead>
+            <tbody>
+            {% for obj in img_inpaint_objs %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{obj.name}}</td>
+                <td>{{obj.dateCreated}}</td>
+                <td><a href="{% url 'view-result' obj.id %}">View Result</a></td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

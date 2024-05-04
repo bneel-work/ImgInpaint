@@ -1,0 +1,4 @@
+django
+django-admin-interface
+numpy
+opencv-python

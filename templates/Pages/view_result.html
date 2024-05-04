@@ -1,0 +1,23 @@
+{% extends 'Boiler/Base.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="container mt-5">
+        <h2 class="text-center">{{imgObj.name}}</h2>
+        <div class="row mt-4">
+            <div class="col-lg-4 mt-3">
+                <img src="/{{imgObj.damaged_img}}" class="rounded mx-auto d-block" alt="{{imgObj.name}}">
+                <p class="text-center mt-2">Damaged Image</p>
+            </div>
+            <div class="col-lg-4 mt-3">
+                <img src="/{{imgObj.masked_img}}" class="rounded mx-auto d-block" alt="{{imgObj.name}}">
+                <p class="text-center mt-2">Masked Image</p>
+            </div>
+            <div class="col-lg-4 mt-3">
+                <img src="/{{imgObj.result_img}}" class="rounded mx-auto d-block" alt="{{imgObj.name}}">
+                <p class="text-center mt-2">Result Image</p>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
